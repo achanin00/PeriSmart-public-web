@@ -63,7 +63,5 @@
     if (typeof console !== 'undefined' && console.error) {
       console.error('PeriSmart includes load failed:', err);
     }
-    var fallbackHeader = document.querySelector('.site-header');
-    if (fallbackHeader) setupMenuToggle(fallbackHeader);
   });
 })();
