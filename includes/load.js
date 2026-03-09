@@ -3,6 +3,8 @@
   var base = script.src.replace(/\/[^/]*$/, '/');
   var headerEl = document.getElementById('site-header');
   var footerEl = document.getElementById('site-footer');
+  console.log('[PeriSmart] header placeholder:', headerEl);
+  console.log('[PeriSmart] footer placeholder:', footerEl);
 
   function setActiveNav(container) {
     if (!container) return;
@@ -35,17 +37,21 @@
   }
 
   function inject(placeholder, url, onDone, tagName) {
-    if (!placeholder) return Promise.resolve();
+    if (!placeholder) { console.warn('[PeriSmart] No placeholder for', url); return Promise.resolve(); }
+    console.log('[PeriSmart] Fetching', base + url);
     return fetch(base + url)
       .then(function (r) {
         if (!r.ok) throw new Error(url + ' ' + r.status);
         return r.text();
       })
       .then(function (html) {
+        console.log('[PeriSmart]', url, 'fetched, length:', html.length);
         var wrap = document.createElement('div');
         wrap.innerHTML = html.trim();
         var node = wrap.firstChild;
+        console.log('[PeriSmart]', url, 'parsed node:', node, 'tagName:', node && node.tagName);
         if (tagName && (!node || node.nodeType !== 1 || node.tagName.toUpperCase() !== tagName.toUpperCase())) {
+          console.warn('[PeriSmart]', url, 'tag mismatch: expected', tagName, 'got', node && node.tagName);
           return;
         }
         placeholder.parentNode.replaceChild(node, placeholder);
