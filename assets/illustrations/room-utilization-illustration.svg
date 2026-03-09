@@ -1,0 +1,158 @@
+<svg width="1280" height="740" viewBox="60 70 1280 740" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="110" y1="80" x2="1280" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F2EB"/>
+      <stop offset="0.58" stop-color="#F8F7F2"/>
+      <stop offset="1" stop-color="#EAF1F8"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="150" y1="150" x2="1250" y2="760" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F1F6F7"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="1400" height="900" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="18" stdDeviation="28" flood-color="#132024" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1400" height="900" fill="url(#bg)"/>
+  <circle cx="160" cy="160" r="120" fill="#E9DDD2"/>
+  <circle cx="1230" cy="180" r="150" fill="#DCE8F7"/>
+  <circle cx="1180" cy="760" r="170" fill="#E0F0E8"/>
+
+  <g filter="url(#shadow)">
+    <rect x="128" y="128" width="1144" height="644" rx="36" fill="url(#panel)"/>
+    <rect x="128" y="128" width="1144" height="644" rx="36" stroke="#D6E2E5" stroke-width="2"/>
+  </g>
+
+  <!-- Title -->
+  <text x="184" y="204" fill="#203136" font-size="34" font-family="Arial, Helvetica, sans-serif" font-weight="700">Room utilization</text>
+  <text x="184" y="238" fill="#617A80" font-size="18" font-family="Arial, Helvetica, sans-serif">
+    <tspan x="184" dy="0">How operating room capacity is being used</tspan>
+    <tspan x="184" dy="20">across all rooms over time.</tspan>
+  </text>
+
+  <!-- Stat cards -->
+  <g>
+    <rect x="184" y="284" width="220" height="110" rx="24" fill="#EEF7F6"/>
+    <text x="216" y="324" fill="#4A7076" font-size="17" font-family="Arial, Helvetica, sans-serif">Overall room util</text>
+    <text x="216" y="372" fill="#1E3136" font-size="42" font-family="Arial, Helvetica, sans-serif" font-weight="700">64.4%</text>
+  </g>
+  <g>
+    <rect x="426" y="284" width="220" height="110" rx="24" fill="#FFF7F4"/>
+    <text x="458" y="324" fill="#906154" font-size="17" font-family="Arial, Helvetica, sans-serif">Available hours</text>
+    <text x="458" y="372" fill="#1E3136" font-size="42" font-family="Arial, Helvetica, sans-serif" font-weight="700">1,520</text>
+  </g>
+  <g>
+    <rect x="668" y="284" width="220" height="110" rx="24" fill="#EEF3FF"/>
+    <text x="700" y="324" fill="#4B66A1" font-size="17" font-family="Arial, Helvetica, sans-serif">Used hours</text>
+    <text x="700" y="372" fill="#1E3136" font-size="42" font-family="Arial, Helvetica, sans-serif" font-weight="700">979</text>
+  </g>
+  <g>
+    <rect x="910" y="284" width="220" height="110" rx="24" fill="#F3EEF9"/>
+    <text x="942" y="324" fill="#6A5B8A" font-size="17" font-family="Arial, Helvetica, sans-serif">Total cases</text>
+    <text x="942" y="372" fill="#1E3136" font-size="42" font-family="Arial, Helvetica, sans-serif" font-weight="700">585</text>
+  </g>
+
+  <!-- Multi-line trend chart panel -->
+  <g>
+    <rect x="184" y="434" width="700" height="296" rx="30" fill="#FCFDFD"/>
+    <text x="220" y="480" fill="#223438" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">Utilization by room</text>
+
+    <!-- Target line at ~75% -->
+    <line x1="226" y1="524" x2="840" y2="524" stroke="#8ED9CE" stroke-width="2" stroke-dasharray="8 6" opacity="0.7"/>
+    <text x="846" y="528" fill="#8ED9CE" font-size="13" font-family="Arial, Helvetica, sans-serif">Target</text>
+
+    <!-- OR-1 — blue -->
+    <polyline points="260,548 328,536 396,556 464,540 532,528 600,548 668,536 736,540" fill="none" stroke="#4E90FF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="540" r="6" fill="#4E90FF"/>
+
+    <!-- OR-2 — coral -->
+    <polyline points="260,540 328,546 396,530 464,544 532,534 600,540 668,528 736,536" fill="none" stroke="#F28E79" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="536" r="6" fill="#F28E79"/>
+
+    <!-- OR-3 — teal -->
+    <polyline points="260,522 328,516 396,528 464,512 532,518 600,508 668,522 736,514" fill="none" stroke="#8ED9CE" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="514" r="6" fill="#8ED9CE"/>
+
+    <!-- OR-4 — orange -->
+    <polyline points="260,564 328,570 396,558 464,574 532,566 600,574 668,560 736,568" fill="none" stroke="#F4C86A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="568" r="6" fill="#F4C86A"/>
+
+    <!-- OR-5 — purple (low outlier) -->
+    <polyline points="260,632 328,640 396,636 464,644 532,638 600,648 668,640 736,646" fill="none" stroke="#A78BDB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="646" r="6" fill="#A78BDB"/>
+
+    <!-- OR-6 — green -->
+    <polyline points="260,546 328,554 396,542 464,550 532,540 600,552 668,544 736,548" fill="none" stroke="#6BBF8A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="736" cy="548" r="6" fill="#6BBF8A"/>
+
+    <!-- Overall — dark dashed -->
+    <polyline points="260,562 328,566 396,556 464,564 532,554 600,566 668,558 736,560" fill="none" stroke="#203136" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10 6"/>
+    <circle cx="736" cy="560" r="5" fill="#203136"/>
+
+    <!-- X axis -->
+    <line x1="226" y1="668" x2="760" y2="668" stroke="#D6E2E5" stroke-width="3" stroke-linecap="round"/>
+    <text x="244" y="694" fill="#70878D" font-size="14" font-family="Arial, Helvetica, sans-serif">Jan 30</text>
+    <text x="380" y="694" fill="#70878D" font-size="14" font-family="Arial, Helvetica, sans-serif">Feb 9</text>
+    <text x="516" y="694" fill="#70878D" font-size="14" font-family="Arial, Helvetica, sans-serif">Feb 16</text>
+    <text x="652" y="694" fill="#70878D" font-size="14" font-family="Arial, Helvetica, sans-serif">Feb 23</text>
+  </g>
+
+  <!-- Room breakdown dark panel -->
+  <g>
+    <rect x="912" y="434" width="292" height="296" rx="30" fill="#192629"/>
+    <text x="946" y="480" fill="#EEF4F4" font-size="24" font-family="Arial, Helvetica, sans-serif" font-weight="700">By room</text>
+
+    <!-- OR-1 -->
+    <g>
+      <rect x="946" y="510" width="118" height="14" rx="7" fill="#31464B"/>
+      <rect x="946" y="510" width="80" height="14" rx="7" fill="#4E90FF"/>
+      <text x="946" y="548" fill="#A7C0BC" font-size="16" font-family="Arial, Helvetica, sans-serif">OR-1  66.7%</text>
+    </g>
+
+    <!-- OR-2 -->
+    <g>
+      <rect x="946" y="568" width="118" height="14" rx="7" fill="#31464B"/>
+      <rect x="946" y="568" width="84" height="14" rx="7" fill="#F28E79"/>
+      <text x="946" y="606" fill="#A7C0BC" font-size="16" font-family="Arial, Helvetica, sans-serif">OR-2  70.0%</text>
+    </g>
+
+    <!-- OR-3 -->
+    <g>
+      <rect x="946" y="626" width="118" height="14" rx="7" fill="#31464B"/>
+      <rect x="946" y="626" width="90" height="14" rx="7" fill="#8ED9CE"/>
+      <text x="946" y="664" fill="#A7C0BC" font-size="16" font-family="Arial, Helvetica, sans-serif">OR-3  74.7%</text>
+    </g>
+
+    <!-- OR-4 -->
+    <g>
+      <rect x="1080" y="510" width="104" height="14" rx="7" fill="#31464B"/>
+      <rect x="1080" y="510" width="60" height="14" rx="7" fill="#F4C86A"/>
+      <text x="1080" y="548" fill="#A7C0BC" font-size="15" font-family="Arial, Helvetica, sans-serif">OR-4  56.5%</text>
+    </g>
+
+    <!-- OR-5 -->
+    <g>
+      <rect x="1080" y="568" width="104" height="14" rx="7" fill="#31464B"/>
+      <rect x="1080" y="568" width="28" height="14" rx="7" fill="#A78BDB"/>
+      <text x="1080" y="606" fill="#A7C0BC" font-size="15" font-family="Arial, Helvetica, sans-serif">OR-5  27.0%</text>
+    </g>
+
+    <!-- Overall -->
+    <g>
+      <rect x="1080" y="626" width="104" height="14" rx="7" fill="#31464B"/>
+      <rect x="1080" y="626" width="64" height="14" rx="7" fill="#607C82"/>
+      <text x="1080" y="664" fill="#A7C0BC" font-size="15" font-family="Arial, Helvetica, sans-serif">Overall  60.3%</text>
+    </g>
+  </g>
+
+  <!-- Floating note -->
+  <g filter="url(#shadow)">
+    <rect x="964" y="118" width="286" height="112" rx="24" fill="#FFFFFF"/>
+    <text x="996" y="160" fill="#213338" font-size="19" font-family="Arial, Helvetica, sans-serif" font-weight="700">
+      <tspan x="996" dy="0">Room-by-room</tspan>
+      <tspan x="996" dy="20">capacity insight</tspan>
+    </text>
+    <text x="996" y="204" fill="#627C82" font-size="16" font-family="Arial, Helvetica, sans-serif">Spot underused rooms quickly.</text>
+  </g>
+</svg>

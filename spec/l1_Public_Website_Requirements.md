@@ -204,7 +204,13 @@ The following claims should be avoided in v1 unless explicitly approved for publ
 
 ## 11. HTML-Only Implementation Approach
 
-### 11.1 Recommended technical approach
+### 11.1 Hosting
+- Site is hosted on **Cloudflare Pages** (free tier)
+- Source repository: `PeriSmart-public-web` on GitHub
+- Custom domain: `peri-smart.com` with DNS managed by Cloudflare
+- Cloudflare provides CDN, SSL, and deployment from the GitHub repo
+
+### 11.2 Recommended technical approach
 - Static HTML pages
 - Shared CSS file(s)
 - No framework
@@ -212,12 +218,12 @@ The following claims should be avoided in v1 unless explicitly approved for publ
 - No backend requirement for v1
 - No JavaScript required for core browsing
 
-### 11.2 Acceptable lightweight additions
+### 11.3 Acceptable lightweight additions
 - Mailto link for contact
 - External scheduling/demo link
 - Embedded hosted video in a later revision, if needed
 
-### 11.3 Not recommended for v1
+### 11.4 Not recommended for v1
 - Custom lead form backend
 - Search
 - Animation-heavy front-end libraries
