@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact PeriSmart | Request a Demo</title>
+  <meta name="description" content="Request a PeriSmart demo or continue the conversation about OR execution visibility, deployment, and operational coordination.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <div id="site-header">
+      <header class="site-header">
+        <div class="container nav-bar">
+          <a class="brand" href="index.html">
+            <img src="assets/logo/perismart-logo.png" alt="PeriSmart logo">
+            <span class="brand-mark">
+              <span>OR execution intelligence</span>
+            </span>
+          </a>
+          <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+            <span class="nav-toggle-icon" aria-hidden="true"></span>
+          </button>
+          <nav class="nav-links" id="nav-links" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="platform.html">Platform</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="privacy-deployment.html">Privacy &amp; Deployment</a>
+            <a href="contact.html" class="is-active">Contact</a>
+            <a class="button button-primary" href="contact.html#demo-form">Request a Demo</a>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main>
+      <section class="page-hero">
+        <div class="container split-hero">
+          <div>
+            <span class="eyebrow">Contact</span>
+            <h1 id="request-demo">Let's talk about your OR efficiency.</h1>
+            <p class="lede">Whether you're exploring perioperative visibility for the first time or ready for a technical deep-dive, we'd love to hear about your workflow and show you how PeriSmart fits in.</p>
+          </div>
+          <div class="visual-frame">
+            <img src="assets/illustrations/case-detail-illustration.svg" alt="Stylized PeriSmart case detail illustration">
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container contact-layout">
+          <div class="contact-stack">
+            <article class="contact-card">
+              <h3>Email the team</h3>
+              <p>Reach out for initial inquiries, privacy questions, technical review requests, or to schedule a demo.</p>
+              <a class="button button-primary" href="mailto:info@perismart.com?subject=PeriSmart%20Inquiry">Email PeriSmart</a>
+            </article>
+            <article class="contact-card">
+              <h3>Not sure where to start?</h3>
+              <p>Most hospitals begin with one of three questions: where PeriSmart fits first, how privacy is handled, or how much operational change is needed to deploy.</p>
+            </article>
+          </div>
+
+          <div class="panel" id="demo-form">
+            <div class="section-header">
+              <span class="eyebrow">Request a Demo</span>
+              <h2>See PeriSmart in action.</h2>
+              <p>Fill out the form below and we'll schedule a walkthrough tailored to your OR environment.</p>
+            </div>
+            <form action="https://formspree.io/f/myknkgpn" method="POST" class="demo-request-form">
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="demo-name">Name</label>
+                  <input type="text" id="demo-name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="demo-email">Work email</label>
+                  <input type="email" id="demo-email" name="email" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="demo-org">Hospital / Organization</label>
+                  <input type="text" id="demo-org" name="organization" required>
+                </div>
+                <div class="form-group">
+                  <label for="demo-role">Role</label>
+                  <input type="text" id="demo-role" name="role" placeholder="e.g. Periop Director, IT Manager">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="demo-interest">What would you like to explore?</label>
+                <textarea id="demo-interest" name="interest" rows="3" placeholder="e.g. OR turnover visibility, scheduling integration, privacy review..."></textarea>
+              </div>
+              <button type="submit" class="button button-primary">Request a Demo</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container cta-band">
+          <span class="eyebrow">Get Started</span>
+          <h2>We'll respond within one business day.</h2>
+          <p>Send us an email or <a href="#demo-form">request a demo</a> above — we'll tailor the conversation to your hospital's priorities.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer">
+      <footer class="site-footer">
+        <div class="container footer-grid">
+          <div>
+            <a class="brand" href="index.html">
+              <img src="assets/logo/perismart-logo.png" alt="PeriSmart logo">
+              <span class="brand-mark">
+                <strong>PeriSmart</strong>
+                <span>Real-time visibility into OR execution</span>
+              </span>
+            </a>
+            <p class="note">&copy; PeriSmart. All rights reserved.</p>
+          </div>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="platform.html">Platform</a>
+            <a href="how-it-works.html">How It Works</a>
+            <a href="privacy-deployment.html">Privacy &amp; Deployment</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="includes/load.js"></script>
+  <script>
+    (function () {
+      var form = document.querySelector('.demo-request-form');
+      if (!form) return;
+      var panel = form.closest('.panel');
+      var isConfigured = form.action.indexOf('YOUR_FORM_ID') === -1;
+
+      if (!isConfigured) {
+        panel.classList.add('form-disabled');
+        Array.prototype.forEach.call(
+          form.querySelectorAll('input, textarea, button'),
+          function (el) { el.disabled = true; }
+        );
+        return;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var btn = form.querySelector('button[type="submit"]');
+        btn.disabled = true;
+        btn.textContent = 'Sending\u2026';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function (res) {
+          if (res.ok) {
+            window.location.href = 'thank-you.html';
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Request a Demo';
+            alert('Something went wrong. Please try again or email us directly.');
+          }
+        }).catch(function () {
+          btn.disabled = false;
+          btn.textContent = 'Request a Demo';
+          alert('Network error. Please try again or email us directly.');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

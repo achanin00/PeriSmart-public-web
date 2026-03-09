@@ -1,0 +1,25 @@
+We need a public website to promote perismart.  
+
+Based on the perismart functionality in the specs and using a structure similar to public reference sites below
+provide a proposed structure, plan and approach for the perismart public website.  
+Create a spec(s) in ./spec/public-web folder
+
+This version of the website should be in HTML only.  
+Unless you think otherwise, I do not think we need high-end functionality in a public website.
+
+Public reference sites: 
+1. https://apella.io/
+2. https://www.surgicalsafety.com/
+3. https://www.nsightsurgical.ai/
+
+Please note:
+1. Reference sites may have information and functionality that is not included in perisoft.  
+   a. e.g: Surgical Safety checklist in SST
+   b. Logically such functionality should not be included in the perisoft website.
+2. Reference sites has physician or hospital references.  Since we do not have any yet, we may not want to include it.
+3. Reference sites have an animation video on the main page to explain system functionality
+   a. Create a placeholder for such a video
+   b. provide a recommended script
+   c. provide a recommendation on how to generate such a video using modern genAI tools like Sora or Nano Banana
+
+Do not generate any HTML yet.  That will be the next step.
