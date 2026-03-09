@@ -717,7 +717,7 @@ a {
 
 .quote-band,
 .cta-band {
-  margin: 2rem 0 4rem;
+  margin: 2rem auto 4rem;
   padding: 3rem;
   border-radius: var(--radius-xl);
   background: var(--gradient-hero);
