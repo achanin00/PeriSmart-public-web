@@ -45,7 +45,7 @@
               <h2>See PeriSmart in action.</h2>
               <p>Fill out the form below and we'll schedule a walkthrough tailored to your OR environment.</p>
             </div>
-            <form action="https://formspree.io/f/myknkgpn" method="POST" class="demo-request-form">
+            <form action="https://perismart-form.perismart.workers.dev" method="POST" class="demo-request-form">
 
               <div class="form-row">
                 <div class="form-group">
@@ -93,17 +93,6 @@
     (function () {
       var form = document.querySelector('.demo-request-form');
       if (!form) return;
-      var panel = form.closest('.panel');
-      var isConfigured = form.action.indexOf('YOUR_FORM_ID') === -1;
-
-      if (!isConfigured) {
-        panel.classList.add('form-disabled');
-        Array.prototype.forEach.call(
-          form.querySelectorAll('input, textarea, button'),
-          function (el) { el.disabled = true; }
-        );
-        return;
-      }
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -111,10 +100,18 @@
         btn.disabled = true;
         btn.textContent = 'Sending\u2026';
 
+        var data = {
+          name: form.querySelector('[name="name"]').value,
+          email: form.querySelector('[name="email"]').value,
+          organization: form.querySelector('[name="organization"]').value,
+          role: form.querySelector('[name="role"]').value,
+          interest: form.querySelector('[name="interest"]').value
+        };
+
         fetch(form.action, {
           method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
+          body: JSON.stringify(data),
+          headers: { 'Content-Type': 'application/json' }
         }).then(function (res) {
           if (res.ok) {
             window.location.href = 'thank-you.html';
