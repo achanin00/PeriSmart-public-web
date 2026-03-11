@@ -1,0 +1,5 @@
+.env
+.env.*
+.tmp_video_render/
+.video_vendor/
+.vite/
