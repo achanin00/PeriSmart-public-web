@@ -3,3 +3,4 @@
 .tmp_video_render/
 .video_vendor/
 .vite/
+__pycache__/
