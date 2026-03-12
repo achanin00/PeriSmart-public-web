@@ -126,12 +126,19 @@ export const OrBoard: React.FC = () => {
                 "0 30px 90px rgba(15,23,42,0.14), 0 10px 30px rgba(15,23,42,0.08)",
               padding: 16,
               width: 1700,
+              overflow: "hidden",
             }}
           >
-            <Img
-              src={staticFile("illustrations/or-board-screenshot.png")}
-              style={{ width: "100%", borderRadius: 18 }}
-            />
+            <div style={{ overflow: "hidden", borderRadius: 18 }}>
+              <Img
+                src={staticFile("illustrations/or-board-screenshot.png")}
+                style={{
+                  width: "150%",
+                  transformOrigin: "top left",
+                  imageRendering: "auto",
+                }}
+              />
+            </div>
           </div>
         </div>
 
