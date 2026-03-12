@@ -2,3 +2,6 @@ node_modules/
 .audio_tmp/
 out/
 dist/
+public/illustrations
+public/logo
+public/video
